@@ -1,0 +1,22 @@
+<div>
+  <%= link_to "新規作成", new_blog_path %>
+</div>
+
+<div>
+  <%= notice %>
+  <% @blogs.each do |log| %>
+  <div>
+    title:<%= log.title %>
+  </div>
+  <div>
+    content:<%= log.content%>
+  </div>
+  <ul>
+    <li><%= link_to "確認", blog_path(log.id) %></li>
+    <li><%= link_to "編集", edit_blog_path(log.id) %></li>
+    <li><%= link_to '削除', blog_path(log.id), method: :delete %></li>
+  </ul>
+
+
+  <% end %>
+</div>
